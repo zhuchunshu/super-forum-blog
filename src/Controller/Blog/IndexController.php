@@ -42,9 +42,6 @@ class IndexController
 	// 我的博客
 	#[GetMapping(path:"{username}.html")]
 	public function myBlog($username){
-		if(!Authority()->check('blog')){
-			return admin_abort('无权限',401);
-		}
 		$username = urldecode($username);
 		if(!User::query(true)->where('username',$username)->exists()){
 			return admin_abort('用户:'.$username.'不存在',403);

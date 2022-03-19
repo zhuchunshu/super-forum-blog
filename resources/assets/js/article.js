@@ -3466,6 +3466,7 @@ if (document.getElementById('vue-blog-article-create')) {
         }); // vditor
 
         this.vditor = new (vditor__WEBPACK_IMPORTED_MODULE_0___default())('content-vditor', {
+          cdn: '/js/vditor',
           height: 400,
           toolbarConfig: {
             pin: true
@@ -3613,6 +3614,7 @@ if (document.getElementById('vue-blog-article-edit')) {
         }); // vditor
 
         this.vditor = new (vditor__WEBPACK_IMPORTED_MODULE_0___default())('content-vditor', {
+          cdn: '/js/vditor',
           height: 400,
           toolbarConfig: {
             pin: true

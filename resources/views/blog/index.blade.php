@@ -59,15 +59,20 @@
             <div class="col-md-3">
                 <div class="card">
                     <div class="card-status-top bg-primary"></div>
-                    <div class="card-body">
+                    <div class="card-header">
                         <h3 class="card-title">
                             {{$user->username}} 博客
                         </h3>
                     </div>
-                    <div class="card-footer">
-                        <a href="/blog/article/create" class="btn btn-dark">写文章</a>
-                        <a href="/blog/class" class="btn btn-light">分类管理</a>
+                    <div class="card-body">
+                        {{$user->username}}博客 创建于:{{format_date($data->created_at)}}
                     </div>
+                    @if(Authority()->check('blog') && auth()->id()===$user->id)
+                        <div class="card-footer">
+                            <a href="/blog/article/create" class="btn btn-dark">写文章</a>
+                            <a href="/blog/class" class="btn btn-light">分类管理</a>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
