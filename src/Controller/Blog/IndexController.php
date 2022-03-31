@@ -40,7 +40,7 @@ class IndexController
 		return redirect()->url('/blog/'.auth()->data()->username.".html")->with('success','创建成功!')->go();
 	}
 	// 我的博客
-	#[GetMapping(path:"{username}.html")]
+	#[GetMapping(path:"{username}")]
 	public function myBlog($username){
 		$username = urldecode($username);
 		if(!User::query(true)->where('username',$username)->exists()){
